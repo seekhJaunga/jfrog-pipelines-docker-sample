@@ -19,14 +19,14 @@ resources:
   - name: dbp_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: myArtifactory
+      sourceArtifactory: punyaTest
       buildName: dbp_build
       buildNumber: 1    
 
   - name: dbp_promoted_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: myArtifactory
+      sourceArtifactory: punyaTest
       buildName: dbp_build
       buildNumber: 1
       
@@ -64,7 +64,7 @@ pipelines:
         type: DockerPush
         configuration:
           affinityGroup: dbp_group
-          targetRepository: quickstarts-target-local
+          targetRepository: punyapro123-local
           integrations:
             - name: punyaTest
           inputSteps:
@@ -83,9 +83,9 @@ pipelines:
       - name: promote_dbp_build
         type: PromoteBuild
         configuration:
-          targetRepository: quickstarts-target-local
+          targetRepository: punyapro123-local
           integrations:
-            - name: myArtifactory
+            - name: punyaTest
           inputResources:
             - name: dbp_build_info
           outputResources:
