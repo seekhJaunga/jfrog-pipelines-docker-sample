@@ -12,7 +12,7 @@ resources:
     configuration:
       registry: punyaTest
       sourceRepository: punyapro123-local              # <-- required if registry is Artifactory
-      imageName: pipelines.jfrog.io/punyapro123-local/dbp  # < -- replace with your image path and name
+      imageName: pipelineslnp1.jfrogdev.org/punyapro123-local/dbp  # < -- replace with your image path and name
       imageTag: latest
       autoPull: true
       
@@ -47,7 +47,7 @@ pipelines:
           affinityGroup: dbp_group
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: pipelines.jfrog.io/punyapro123-local/dbp  # replace with your image path and name
+          dockerImageName: pipelineslnp1.jfrogdev.org/punyapro123-local/dbp  # replace with your image path and name
           dockerImageTag: ${run_number}
           inputResources:
             - name: dbp_repo
